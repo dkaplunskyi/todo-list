@@ -1,4 +1,4 @@
-import newProjectBtnImgSrc from '../images/plus.png';
+import newProjectBtnImgSrc from './assets/images/plus.png';
 
 export default function createFooterButtons() {
   const newProjectBtn = document.createElement('button');

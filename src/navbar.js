@@ -1,10 +1,10 @@
-import inboxImgSrc from '../images/inbox.png';
-import todayImgSrc from '../images/star.png';
-import upComingImgSrc from '../images/calendar.png';
-import anyTimeImgSrc from '../images/repository.png';
-import somedayImgSrc from '../images/box.png';
-import logbookImgSrc from '../images/check.png';
-import trashImgSrc from '../images/trash.png';
+import inboxImgSrc from './assets/images/inbox.png';
+import todayImgSrc from './assets/images/star.png';
+import upComingImgSrc from './assets/images/calendar.png';
+import anyTimeImgSrc from './assets/images/repository.png';
+import somedayImgSrc from './assets/images/box.png';
+import logbookImgSrc from './assets/images/check.png';
+import trashImgSrc from './assets/images/trash.png';
 
 export default function createDefaultNavItems() {
   const navList = document.createElement('ul');
