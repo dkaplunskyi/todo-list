@@ -1,17 +1,14 @@
 import './style.css';
-import app from './user-interface.js';
+import layout from './layout.js';
+import newProjectForm from './projectCreator.js';
 
-app();
+layout();
 
+const main = document.querySelector('main');
+const newProjectBtn = document.querySelector('.new-project-btn');
 
-class Project {
-  constructor(name, note) {
-    this.name = name
-    this.note = note
+newProjectBtn.addEventListener('click', () => {
+  if (!main.hasChildNodes()) {
+    main.append(newProjectForm());
   }
-}
-
-const projects = [];
-
-
-
+})

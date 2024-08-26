@@ -1,4 +1,6 @@
 import newProjectBtnImgSrc from './assets/images/plus.png';
+import layout from './layout';
+import projectForm from './projectCreator';
 
 export default function createFooterButtons() {
   const newProjectBtn = document.createElement('button');
@@ -9,6 +11,10 @@ export default function createFooterButtons() {
   newProjectBtnImg.src = newProjectBtnImgSrc;
 
   newProjectBtn.prepend(newProjectBtnImg);
+
+  newProjectBtn.addEventListener('click', () => {
+    
+  });
 
   return newProjectBtn;
 }

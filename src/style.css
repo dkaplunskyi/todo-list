@@ -17,6 +17,7 @@ body {
   grid-template-areas:
     'aside main'
     'footer footer';
+  font-family: open-sans;
 }
 
 aside {
@@ -27,7 +28,7 @@ aside {
 
 aside ul {
   list-style: none;
-  font-family: open-sans;
+  /* font-family: open-sans; */
 }
 
 aside ul li {
@@ -39,7 +40,7 @@ aside ul li {
 }
 
 aside ul li:hover,
-.active{
+.active {
   font-weight: 900;
   transform: translateX(10px);
 }
@@ -58,6 +59,70 @@ footer .new-project-btn img {
 
 main {
   grid-area: main;
+  display: flex;
+  justify-content: center;
+}
+
+main .wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  width: 50%;
+  padding: 40px 0;
+}
+
+main .wrapper input {
+  border: none;
+  outline: none;
+  border-bottom: 1px solid rgb(108, 192, 253);
+  padding: 10px 0;
+  font-size: 1.5rem;
+}
+
+main .wrapper input:active {
+  border: none;
+  outline: none;
+}
+
+main .wrapper input#project-title::placeholder {
+  font-size: 1.5rem;
+  font-family: open-sans;
+}
+
+main .wrapper input#project-notes::placeholder {
+  font-size: 0.8rem;
+  font-family: open-sans;
+}
+
+main .wrapper .submit {
+  border: none;
+  padding: 10px 40px;
+  color: white;
+  background-color: rgb(16, 197, 25);
+  border-radius: 15px;
+  align-self: center;
+  transition: all 0.2s;
+  font-family: open-sans;
+}
+
+main .wrapper .submit:hover {
+  transform: scale(1.1);
+}
+
+main .wrapper .cancel {
+  border: none;
+  padding: 10px 40px;
+  color: #e81919;
+  border-radius: 15px;
+  align-self: center;
+  transition: all 0.2s;
+  font-family: open-sans;
+}
+
+main .wrapper .btn-wrapper {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
 }
 
 footer {
@@ -66,7 +131,8 @@ footer {
   border-top: 1px solid #f1f1f1;
 }
 
-footer .new-project-btn{
+footer .new-project-btn {
+  font-family: open-sans;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -78,6 +144,6 @@ footer .new-project-btn{
   transition: all 0.2s;
 }
 
-footer .new-project-btn:hover{
+footer .new-project-btn:hover {
   font-size: 1rem;
 }
