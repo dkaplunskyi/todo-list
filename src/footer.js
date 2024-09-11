@@ -1,20 +1,45 @@
-import newProjectBtnImgSrc from './assets/images/plus.png';
-import layout from './layout';
-import projectForm from './projectCreator';
+import plusImgSrc from './assets/images/plus.png';
+import {dialog, taskForm} from "./projectCreator";
 
-export default function createFooterButtons() {
-  const newProjectBtn = document.createElement('button');
-  newProjectBtn.textContent = 'Add project';
-  newProjectBtn.classList.add('new-project-btn');
+import { mainSectionCleaner } from './index';
 
-  const newProjectBtnImg = document.createElement('img');
-  newProjectBtnImg.src = newProjectBtnImgSrc;
+export default function createFooter() {
+  const footer = document.createElement('footer');
 
-  newProjectBtn.prepend(newProjectBtnImg);
+  const newProjectBtn = createBtn('Add project', plusImgSrc, 'new-project-btn');
+  const newTaskBtn = createBtn('New Task', plusImgSrc, 'new-task-btn');
+
 
   newProjectBtn.addEventListener('click', () => {
-    
-  });
+    newTaskBtn.style.visibility = 'visible';
 
-  return newProjectBtn;
+    mainSectionCleaner();
+    
+    const main = document.querySelector('main');
+    main.append(dialog());
+  })
+
+  newTaskBtn.addEventListener('click', () => {
+    const main = document.querySelector('main');
+
+    main.append(taskForm());
+  })
+
+  footer.append(newProjectBtn, newTaskBtn);
+
+  return footer;
+}
+
+function createBtn(name, btnImgSrc, className) {
+  const btn = document.createElement('button');
+  btn.textContent = name;
+
+  btn.classList.add(className);
+
+  const btnImg = document.createElement('img');
+  btnImg.src = btnImgSrc;
+
+  btn.prepend(btnImg);
+
+  return btn;
 }

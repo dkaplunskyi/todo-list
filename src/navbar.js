@@ -7,6 +7,7 @@ import logbookImgSrc from './assets/images/check.png';
 import trashImgSrc from './assets/images/trash.png';
 
 export default function createDefaultNavItems() {
+  
   const navList = document.createElement('ul');
 
   // Create a img tag with src attribute

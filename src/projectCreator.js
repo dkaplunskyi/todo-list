@@ -1,13 +1,19 @@
+import { mainSectionCleaner } from "./index";
+
 class Project {
   constructor(name, note) {
     this.name = name
     this.note = note
   }
+
+  index = null
+
+  tesks = [];
 }
 
 const projects = [];
 
-export default function createFormForNewProject() {
+function dialog() {
   const wrapper = document.createElement('div');
   wrapper.classList.add('wrapper');
 
@@ -38,25 +44,46 @@ export default function createFormForNewProject() {
   });
 
   cancel.addEventListener('click', () => {
-    const main = document.querySelector('main');
-
-    while (main.hasChildNodes()) {
-      main.removeChild(main.firstChild);
-    }
+    mainSectionCleaner()
   })
 
-  submit.addEventListener('click', () => {
+  submit.addEventListener('click', (e) => {
+    e.preventDefault();
     projects.push(new Project(titleInput.value, notesInput.value));
     const aside = document.querySelector('aside');
 
     const div = document.createElement('div');
     div.textContent = titleInput.value;
+
     aside.appendChild(div);
 
   })
 
   btnWrapper.append(cancel, submit);
-  wrapper.append(titleInput, notesInput, btnWrapper);
+  wrapper.append(titleInput, notesInput);
 
   return wrapper;
 }
+
+function taskForm() {
+  const tasksWrapper = Object.assign(document.createElement('div'), {
+    className: 'tasks-wrapper'
+  });
+
+  const checkBox = Object.assign(document.createElement('input'), {
+    type: 'checkbox',
+    id: 'task-checker',
+    value: false
+  });
+
+  const taskInput = Object.assign(document.createElement('input'), {
+    className: 'tasks-input',
+    placeholder: 'Task'
+  });
+
+  tasksWrapper.append(checkBox, taskInput);
+
+  return tasksWrapper;
+}
+
+export { dialog, taskForm }

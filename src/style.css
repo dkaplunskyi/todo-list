@@ -53,23 +53,37 @@ aside ul li:last-child {
 
 
 aside ul .nav-img,
-footer .new-project-btn img {
+footer img {
   width: 20px;
 }
 
 main {
   grid-area: main;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
 }
+
 
 main .wrapper {
   display: flex;
   flex-direction: column;
   gap: 40px;
-  width: 50%;
+  width: 900px;
   padding: 40px 0;
 }
+
+main .tasks-wrapper {
+  display: flex;
+  width: 900px;
+  gap: 1rem;
+}
+
+main .tasks-wrapper .tasks-input {
+  width: 100%;
+}
+
 
 main .wrapper input {
   border: none;
@@ -77,6 +91,7 @@ main .wrapper input {
   border-bottom: 1px solid rgb(108, 192, 253);
   padding: 10px 0;
   font-size: 1.5rem;
+  width: 100%;
 }
 
 main .wrapper input:active {
@@ -125,25 +140,41 @@ main .wrapper .btn-wrapper {
   gap: 20px;
 }
 
+
 footer {
   grid-area: footer;
   display: flex;
   border-top: 1px solid #f1f1f1;
 }
 
-footer .new-project-btn {
+
+footer .new-project-btn,
+footer .new-task-btn {
   font-family: open-sans;
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 6px;
-  width: 200px;
+  /* width: 200px; */
   border: none;
   background-color: white;
   border-right: 1px solid #f1f1f1;
   transition: all 0.2s;
 }
 
-footer .new-project-btn:hover {
+footer .new-project-btn {
+  flex-basis: 200px;
+}
+
+footer .new-task-btn {
+  /* flex-basis: 200px; */
+  flex-grow: 2;
+  visibility: hidden;
+  /* margin: 0 auto; */
+  border: none;
+}
+
+footer .new-project-btn:hover,
+footer .new-task-btn:hover {
   font-size: 1rem;
 }

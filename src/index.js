@@ -1,14 +1,19 @@
 import './style.css';
-import layout from './layout.js';
-import newProjectForm from './projectCreator.js';
 
-layout();
+import  main  from './main';
+import aside from './aside';
+import footer from './footer';
 
-const main = document.querySelector('main');
-const newProjectBtn = document.querySelector('.new-project-btn');
+const AppRunner = (() => {
+  document.body.append(aside(), main(), footer());
+})()
 
-newProjectBtn.addEventListener('click', () => {
-  if (!main.hasChildNodes()) {
-    main.append(newProjectForm());
+const mainSectionCleaner = () => {
+  const main = document.querySelector('main');
+
+  while (main.hasChildNodes()) {
+    main.removeChild(main.firstChild);
   }
-})
+}
+
+export { mainSectionCleaner };
