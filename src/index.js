@@ -4,8 +4,11 @@ import  main  from './main';
 import aside from './aside';
 import footer from './footer';
 
+import { printProjects, projects } from './projectCreator';
+
 const AppRunner = (() => {
   document.body.append(aside(), main(), footer());
+  printProjects(projects);
 })()
 
 const mainSectionCleaner = () => {

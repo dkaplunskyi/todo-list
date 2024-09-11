@@ -1,5 +1,5 @@
 import plusImgSrc from './assets/images/plus.png';
-import {dialog, taskForm} from "./projectCreator";
+import { dialog, taskForm } from "./projectCreator";
 
 import { mainSectionCleaner } from './index';
 
@@ -14,14 +14,14 @@ export default function createFooter() {
     newTaskBtn.style.visibility = 'visible';
 
     mainSectionCleaner();
-    
+
     const main = document.querySelector('main');
     main.append(dialog());
   })
 
   newTaskBtn.addEventListener('click', () => {
     const main = document.querySelector('main');
-
+    console.log(main.children);
     main.append(taskForm());
   })
 

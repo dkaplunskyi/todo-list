@@ -63,6 +63,7 @@ main {
   flex-direction: column;
   align-items: center;
   gap: 1rem;
+  background-color: #f2f6f7;
 }
 
 
@@ -78,10 +79,25 @@ main .tasks-wrapper {
   display: flex;
   width: 900px;
   gap: 1rem;
+  flex-direction: column;
+  position: relative;
+  border-radius: 10px;
+  background-color: white;
+  padding: 2rem;
+  box-shadow: 0px 2px 2px 2px lightgray;
+}
+
+main .tasks-wrapper input{
+  border: none;
 }
 
 main .tasks-wrapper .tasks-input {
   width: 100%;
+}
+
+main .tasks-wrapper #task-checker {
+  position: absolute;
+  left: 0.5rem;
 }
 
 
@@ -92,6 +108,7 @@ main .wrapper input {
   padding: 10px 0;
   font-size: 1.5rem;
   width: 100%;
+  background-color: #f2f6f7;
 }
 
 main .wrapper input:active {
